@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../uw.css">
+    <title>Washington Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div id="Island">
+    <!-- Northridge Module -->
+    <h1>Projects</h1>
+    <a class="uwmenuisland" href="UW-Homepage.html">Homepage</a>
+    <a class="uwmenuisland" href="UW-Projects.html">Project</a>
+    <a class="uwmenuisland" href="UW-Skills.html">Skills</a>
+    <a class="uwmenuisland" href="UW-Blogs.html">Blog</a>
+    <a class="uwmenuisland" href="UW-Achievements.html">Achievements</a>
+
+    <!-- Westbridge -->
+    <div id="uwleft">
+        <h3>Overview</h3>
+
+        <div class="project-card">
+            <h4>C++ Algorithm Visualizer</h4>
+
+            <div class="project-tags">
+                <span class="project-tag">C++</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">Visualization</span>
+            </div>
+
+            <p>
+                A fully interactive algorithm visualizer built from scratch using C++, JavaScript, and custom rendering logic. 
+                Includes dozens of sorting algorithms, experimental joke sorts, UI controls, and a Spotify‑style “latte deck” system.
+            </p>
+
+            <a class="read-more-btn" href="#demo">View Demo <span>→</span></a>
+        </div>
+
+        <div class="project-card">
+            <h4>C‑Machine Learning Project</h4>
+            <div class="project-tags">
+                <span class="project-tag">C++</span>
+                <span class="project-tag">ML</span>
+                <span class="project-tag">Neural Nets</span>
+            </div>
+            <p>
+                A machine learning experiment built using C++ and custom math libraries. 
+                Focuses on understanding neural network fundamentals without relying on external frameworks.
+            </p>
+            <a class="read-more-btn" href="">View Project <span>→</span></a>
+        </div>
+
+        <div class="project-card">
+            <h4>Wine & Silence</h4>
+            <div class="project-tags">
+                <span class="project-tag">Writing</span>
+                <span class="project-tag">Novella</span>
+                <span class="project-tag">Creative</span>
+            </div>
+            <p>
+                A personal novella exploring themes of identity, growth, and introspection. 
+                Written as a long‑term creative project alongside my technical work.
+            </p>
+            <a class="read-more-btn" href="">View Project <span>→</span></a>
+        </div>
+    </div>
+
+    <!-- Eastbridge -->
+    <div id="uwright">
+        <div class="full-blog">
+            <div class="blog-content">
+
+                <h1 class="blog-title">C++ Algorithm Visualizer</h1>
+
+                <p>
+                    This project is a full sorting algorithm visualizer built using C++, JavaScript, and custom rendering logic. 
+                    It includes dozens of algorithms, a latte deck playlist system, and a UI inspired by modern music apps.
+                </p>
+
+                <p>
+                    Below is a small embedded demo showing a simplified version of the visualizer. 
+                    It runs a small Bubble Sort animation using the same rendering style as the full version.
+                </p>
+
+                <!-- DEMO SECTION -->
+                <h2 id="demo">Live Demo</h2>
+
+                <div id="demo-container" style="
+                    width: 100%;
+                    height: 260px;
+                    background: #0a1624;
+                    border: 4px solid #2a3f55;
+                    border-radius: 12px;
+                    padding: 10px;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    gap: 4px;
+                ">
+                </div>
+
+                <button id="runDemo" class="read-more-btn" style="margin-top: 15px;">
+                    Run Demo <span>→</span>
+                </button>
+
+                <a class="read-more-btn" href="UW-Visualizer.html" style="margin-top: 20px; display: inline-block;">
+                    More <span>→</span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-card" id="uw-fr-left">
+            <h4>About Me</h4>
+            <strong>Aubrey Chen</strong>
+            <p class="blog-date">Aspiring CS Student</p>
+            <p>Working Toward UW's Paul G. Allen School of Computer Science & Engineering</p>
+        </div>
+
+        <div class="footer-card">
+            <h4>Contact</h4>
+            <p class="blog-date">Email: AubreyChen2010@gmail</p>
+            <p class="blog-date">GitHub: HarpySDX</p>
+            <p class="blog-date">LinkedIn: (Future Link)</p>
+        </div>
+
+        <div class="footer-card" id="uw-fr-right">
+            <h4>Resume</h4>
+            <a href="UW-Resume.pdf" class="read-more-btn" id="uw-resume">Resume <span>→</span></a>
+            <p class="blog-date">Algorithm Visualizer</p>
+            <p class="blog-date">Machine Learning Project</p>
+            <p class="blog-date">Novella</p>
+        </div>
+    </footer>
+
+</div>
+
+<!-- MINI VISUALIZER SCRIPT -->
+<script>
+    function renderDemoArray(arr) {
+        const container = document.getElementById("demo-container");
+        container.innerHTML = "";
+        arr.forEach(value => {
+            const bar = document.createElement("div");
+            bar.style.width = "10px";
+            bar.style.height = value + "px";
+            bar.style.background = "#4fa3ff";
+            bar.style.borderRadius = "4px";
+            container.appendChild(bar);
+        });
+    }
+
+    async function bubbleSortDemo(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    let temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+                renderDemoArray(arr);
+                await new Promise(r => setTimeout(r, 80));
+            }
+        }
+    }
+
+    document.getElementById("runDemo").addEventListener("click", () => {
+        const arr = Array.from({ length: 20 }, () => Math.floor(Math.random() * 180) + 20);
+        renderDemoArray(arr);
+        bubbleSortDemo(arr);
+    });
+</script>
+
+</body>
+</html>
