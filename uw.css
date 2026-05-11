@@ -570,7 +570,7 @@ footer {
    ============================================================ */
 
 /* Visualizer Island sizing override */
-#Island.visualizer-page {
+#Island_Visualizer {
 	width: 85%;
 	height: 950px;
 }
