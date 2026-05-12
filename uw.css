@@ -438,9 +438,16 @@ li::marker {
 
 /* Portfolio Island sizing override */
 .UWIslandPortfolio {
-	width: 660px;
-	height: 2435px;
+	box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.35);
+	border: 6.8px solid #2a3f55;
+    border-radius: 38px;
+	width:660px;
+	background: #0a1624;
+	margin: 0 auto;
 	padding: 50px solid #baafa5;
+	font-family: "Merriweather", Serif;
+	height: 2435px;
+	text-shadow: 0 0 2px rgba( 0, 0, 0, 0.35);
 }
 
 /* Two-column layout */
