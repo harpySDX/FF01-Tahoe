@@ -701,7 +701,8 @@ footer {
 .banner .slider .item{
 	position: absolute;
 	inset: 0 0 0 0;
-	transform: translateZ(550px), rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg));
+	transform: translateZ(550px)
+	rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg));
 }
 .banner .slider .item img {
 	width: 100%;
