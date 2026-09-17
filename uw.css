@@ -454,7 +454,7 @@ li::marker {
 #uwleft {
 	margin-top: 20px;
 	float: left;
-	width: auto;
+	width: 40%;
 	height: 1924.5px;
 	background-color: #0f1e2e;
 	padding: 2px;
@@ -465,7 +465,7 @@ li::marker {
 #uwright {
 	margin-top: 20px;
 	float: left;
-	width: auto;
+	width: 55%;
 	height: 1924.5px;
 	background: #132536;
 	border-top-right-radius: 28px;
