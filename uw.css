@@ -454,7 +454,7 @@ li::marker {
 #uwleft {
 	margin-top: 20px;
 	float: left;
-	width: 40%;
+	width: auto;
 	height: 1924.5px;
 	background-color: #0f1e2e;
 	padding: 2px;
